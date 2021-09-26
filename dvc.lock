@@ -23,6 +23,7 @@ stages:
       md5: 6116fc6298ecb91ec9bd6da6cc5f185a
       size: 5946
   poker-hand:
+<<<<<<< HEAD
     cmd: ./hack/download-external-dataset.sh
     deps:
     - path: remote://uci/ml/machine-learning-databases/poker/poker-hand-testing.data
@@ -32,6 +33,17 @@ stages:
       checksum: '"95d3e-42a5b81634600"'
       size: 613694
     - path: remote://uci/ml/machine-learning-databases/poker/poker-hand.names
+=======
+    cmd: wget -r -np -R index.html* https://archive.ics.uci.edu/ml/machine-learning-databases/poker/
+    deps:
+    - path: https://archive.ics.uci.edu/ml/machine-learning-databases/poker/poker-hand-testing.data
+      checksum: '"1766cdd-42a5b7f5c7980"'
+      size: 24538333
+    - path: https://archive.ics.uci.edu/ml/machine-learning-databases/poker/poker-hand-training-true.data
+      checksum: '"95d3e-42a5b81634600"'
+      size: 613694
+    - path: https://archive.ics.uci.edu/ml/machine-learning-databases/poker/poker-hand.names
+>>>>>>> 397068f... Add poker dataset
       checksum: '"173a-42a5b7b305c00"'
       size: 5946
     outs:
