@@ -1,0 +1,9 @@
+stages:
+  poker-hand:
+    cmd: wget -r -np -R index.html* https://archive.ics.uci.edu/ml/machine-learning-databases/poker/
+    deps:
+    - https://archive.ics.uci.edu/ml/machine-learning-databases/poker/poker-hand-testing.data
+    - https://archive.ics.uci.edu/ml/machine-learning-databases/poker/poker-hand-training-true.data
+    - https://archive.ics.uci.edu/ml/machine-learning-databases/poker/poker-hand.names
+    outs:
+    - archive.ics.uci.edu/ml/machine-learning-databases/poker
