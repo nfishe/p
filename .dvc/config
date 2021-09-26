@@ -1,0 +1,2 @@
+['remote "uci"']
+    url = https://archive.ics.uci.edu

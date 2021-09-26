@@ -12,9 +12,9 @@ if [ ! -d "$output" ]; then
     mkdir -p "$output"
 fi
 
-dvc run -n poker-hand \
-    -d https://archive.ics.uci.edu/ml/machine-learning-databases/poker/poker-hand-testing.data \
-    -d https://archive.ics.uci.edu/ml/machine-learning-databases/poker/poker-hand-training-true.data \
-    -d https://archive.ics.uci.edu/ml/machine-learning-databases/poker/poker-hand.names \
+dvc run -n poker-hand "${@}" \
+    -d remote://uci/ml/machine-learning-databases/poker/poker-hand-testing.data \
+    -d remote://uci/ml/machine-learning-databases/poker/poker-hand-training-true.data \
+    -d remote://uci/ml/machine-learning-databases/poker/poker-hand.names \
     -o "${output}" \
-    wget -r -np -R "index.html*" https://archive.ics.uci.edu/ml/machine-learning-databases/poker/
+    ./hack/download-external-dataset.sh
