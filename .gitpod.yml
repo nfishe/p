@@ -1,0 +1,42 @@
+image:
+  file: support/gitpod/Dockerfile
+tasks:
+  - name: Prepare development
+    init: |
+      mkdir -p .vscode
+      conda activate plo-dev
+      echo "✨ Pre-build complete! You can close this terminal ✨ "
+
+ports:
+  - port: 5500
+    onOpen: notify
+
+vscode:
+  extensions:
+    - eamodio.gitlens
+    - njpwerner.autodocstring
+    - lextudio.restructuredtext
+    - ritwickdey.liveserver
+    - ms-python.python
+    - yzhang.markdown-all-in-one
+    - bungcip.better-toml
+    - mhutchie.git-graph
+
+github:
+  prebuilds:
+    # enable for main/default branch
+    master: true
+    # enable for other branches (defaults to false) 
+    branches: false 
+    # enable for pull requests coming from this repo (defaults to true) 
+    pullRequests: false
+    # enable for pull requests coming from forks (defaults to false)
+    pullRequestsFromForks: false
+    # add a check to pull requests (defaults to true)
+    addCheck: false
+    # add a "Review in Gitpod" button as a comment to pull requests (defaults to false)
+    addComment: false
+    # add a "Review in Gitpod" button to the pull request's description (defaults to false)
+    addBadge: false
+    # add a label once the prebuild is ready to pull requests (defaults to false)
+    addLabel: false
