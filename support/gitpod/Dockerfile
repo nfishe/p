@@ -3,8 +3,6 @@ FROM gitpod/workspace-base:latest
 ARG MAMBAFORGE_VERSION="4.10.0-0"
 ARG CONDA_ENV=plo-dev
 
-
-# ---- Configure environment ----
 ENV CONDA_DIR=/home/gitpod/mambaforge3 \
     SHELL=/bin/bash
 ENV PATH=${CONDA_DIR}/bin:$PATH \
