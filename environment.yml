@@ -1,0 +1,9 @@
+name: plo-dev
+channels:
+  - conda-forge
+dependencies:
+  - dvc
+  - notebook
+  - pip:
+      - dvclive
+      - nox
