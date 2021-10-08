@@ -1,0 +1,9 @@
+stages:
+  poker-hand:
+    cmd: ./hack/download-external-dataset.sh
+    deps:
+    - remote://uci/ml/machine-learning-databases/poker/poker-hand-testing.data
+    - remote://uci/ml/machine-learning-databases/poker/poker-hand-training-true.data
+    - remote://uci/ml/machine-learning-databases/poker/poker-hand.names
+    outs:
+    - archive.ics.uci.edu/ml/machine-learning-databases/poker

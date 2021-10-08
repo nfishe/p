@@ -2,8 +2,10 @@ name: plo-dev
 channels:
   - conda-forge
 dependencies:
+  - python
+  - pip
   - dvc
-  - notebook
-  - pip:
-      - dvclive
-      - nox
+  - ipython
+  - scipy
+  - pandas
+  - matplotlib

@@ -1,0 +1,53 @@
+schema: '2.0'
+stages:
+  porker-hand-names:
+    cmd: wget https://archive.ics.uci.edu/ml/machine-learning-databases/poker/poker-hand.names
+      -O poker-hand-names.csv
+    deps:
+    - path: https://archive.ics.uci.edu/ml/machine-learning-databases/poker/poker-hand.names
+      checksum: '"173a-42a5b7b305c00"'
+      size: 5946
+    outs:
+    - path: poker-hand-names.csv
+      md5: 6116fc6298ecb91ec9bd6da6cc5f185a
+      size: 5946
+  poker-hand-names:
+    cmd: wget https://archive.ics.uci.edu/ml/machine-learning-databases/poker/poker-hand.names
+      -O poker-hand.names
+    deps:
+    - path: https://archive.ics.uci.edu/ml/machine-learning-databases/poker/poker-hand.names
+      checksum: '"173a-42a5b7b305c00"'
+      size: 5946
+    outs:
+    - path: poker-hand.names
+      md5: 6116fc6298ecb91ec9bd6da6cc5f185a
+      size: 5946
+  poker-hand:
+<<<<<<< HEAD
+    cmd: ./hack/download-external-dataset.sh
+    deps:
+    - path: remote://uci/ml/machine-learning-databases/poker/poker-hand-testing.data
+      checksum: '"1766cdd-42a5b7f5c7980"'
+      size: 24538333
+    - path: remote://uci/ml/machine-learning-databases/poker/poker-hand-training-true.data
+      checksum: '"95d3e-42a5b81634600"'
+      size: 613694
+    - path: remote://uci/ml/machine-learning-databases/poker/poker-hand.names
+=======
+    cmd: wget -r -np -R index.html* https://archive.ics.uci.edu/ml/machine-learning-databases/poker/
+    deps:
+    - path: https://archive.ics.uci.edu/ml/machine-learning-databases/poker/poker-hand-testing.data
+      checksum: '"1766cdd-42a5b7f5c7980"'
+      size: 24538333
+    - path: https://archive.ics.uci.edu/ml/machine-learning-databases/poker/poker-hand-training-true.data
+      checksum: '"95d3e-42a5b81634600"'
+      size: 613694
+    - path: https://archive.ics.uci.edu/ml/machine-learning-databases/poker/poker-hand.names
+>>>>>>> 397068f... Add poker dataset
+      checksum: '"173a-42a5b7b305c00"'
+      size: 5946
+    outs:
+    - path: archive.ics.uci.edu/ml/machine-learning-databases/poker
+      md5: 77788246f7b33b0d632a8a6ac4eaff3a.dir
+      size: 25157973
+      nfiles: 3
